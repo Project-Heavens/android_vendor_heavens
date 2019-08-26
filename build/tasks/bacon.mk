@@ -16,6 +16,15 @@
 # -----------------------------------------------------------------
 # Heavens OTA update package
 
+#
+# Build system colors
+#
+# PFX: Prefix "target C++:" in yellow
+# INS: Module "Install:" output color (cyan for ics)
+ifneq ($(BUILD_WITH_COLORS),0)
+    include $(TOP_DIR)vendor/heavens/build/core/colors.mk
+endif
+
 HEAVENS_TARGET_PACKAGE := $(PRODUCT_OUT)/$(HEAVENS_VERSION).zip
 
 MD5 := prebuilts/build-tools/path/$(HOST_PREBUILT_TAG)/md5sum
@@ -24,4 +33,32 @@ MD5 := prebuilts/build-tools/path/$(HOST_PREBUILT_TAG)/md5sum
 heavens: $(INTERNAL_OTA_PACKAGE_TARGET)
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(HEAVENS_TARGET_PACKAGE)
 	$(hide) $(MD5) $(HEAVENS_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(HEAVENS_TARGET_PACKAGE).md5sum
-	@echo "Package Complete: $(HEAVENS_TARGET_PACKAGE)" >&2
+	#@echo "Package Complete: $(HEAVENS_TARGET_PACKAGE)" >&2
+
+	@echo  ${CL_RED}""${CL_RED}
+	@echo -e ${CL_RED}"        8888888b.  8888888b.   .d88888b. 888888 8888888888 .d8888b. 88888888888     "${CL_RED}
+	@echo -e ${CL_RED}"        888   Y88b 888   Y88b d88P" "Y88b  "88b 888       d88P  Y88b    888         "${CL_RED}
+	@echo -e ${CL_RED}"        888    888 888    888 888     888   888 888       888    888    888         "${CL_RED}
+	@echo -e ${CL_RED}"        888   d88P 888   d88P 888     888   888 8888888   888           888         "${CL_RED}
+	@echo -e ${CL_RED}"        8888888P"  8888888P"  888     888   888 888       888           888         "${CL_RED}
+	@echo -e ${CL_RED}"        888        888 T88b   888     888   888 888       888    888    888         "${CL_RED}
+	@echo -e ${CL_RED}"        888        888  T88b  Y88b. .d88P   88P 888       Y88b  d88P    888         "${CL_RED}
+	@echo -e ${CL_RED}"        888        888   T88b  "Y88888P"    888 8888888888 "Y8888P"     888         "${CL_RED}
+	@echo -e ${CL_RED}"                                          .d88P                                     "${CL_RED}
+	@echo -e ${CL_RED}"                                        .d88P"                                      "${CL_RED}
+	@echo -e ${CL_RED}"                                       888P"                                        "${CL_RED}
+	@echo -e ${CL_RED}"  888    888 8888888888        d8888 888     888 8888888888 888b    888  .d8888b.   "${CL_RED}
+	@echo -e ${CL_RED}"  888    888 888              d88888 888     888 888        8888b   888 d88P  Y88b  "${CL_RED}
+	@echo -e ${CL_RED}"  888    888 888             d88P888 888     888 888        88888b  888 Y88b.       "${CL_RED}
+	@echo -e ${CL_RED}"  8888888888 8888888        d88P 888 Y88b   d88P 8888888    888Y88b 888  "Y888b.    "${CL_RED}
+	@echo -e ${CL_RED}"  888    888 888           d88P  888  Y88b d88P  888        888 Y88b888     "Y88b.  "${CL_RED}
+	@echo -e ${CL_RED}"  888    888 888          d88P   888   Y88o88P   888        888  Y88888       "888  "${CL_RED}
+	@echo -e ${CL_RED}"  888    888 888         d8888888888    Y888P    888        888   Y8888 Y88b  d88P  "${CL_RED}
+	@echo -e ${CL_RED}"  888    888 8888888888 d88P     888     Y8P     8888888888 888    Y888  "Y8888P"   "${CL_RED}
+	@echo -e ${CL_RST}""${CL_RST}
+	@echo -e ${CL_RST}""${CL_RST}
+	@echo -e ${CL_RST}"                         Build completed! GO TO HEAVENS NOW!                        "${CL_RST}
+	@echo -e ${CL_RST}""${CL_RST}
+	@echo -e ${CL_RED}"===================================================================================="${CL_RED}
+	@echo -e ${CL_RST}""Package Complete: "$(HEAVENS_TARGET_PACKAGE)"${CL_RST}
+	@echo -e ${CL_RED}"===================================================================================="${CL_RED}
