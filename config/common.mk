@@ -127,7 +127,7 @@ PRODUCT_PACKAGES += \
 
 # Extra tools in Lineage
 PRODUCT_PACKAGES += \
-    7z \
+    awk \
     bash \
     curl \
     getcap \
@@ -138,7 +138,6 @@ PRODUCT_PACKAGES += \
     pigz \
     setcap \
     unrar \
-    vim \
     wget \
     zip
 
