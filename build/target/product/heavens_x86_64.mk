@@ -12,10 +12,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-$(call inherit-product, build/target/product/aosp_arm64_ab.mk)
+$(call inherit-product, build/target/product/aosp_x86_64.mk)
+$(call inherit-product, build/target/product/gsi_release.mk)
 
-include vendor/lineage/build/target/product/lineage_generic_target.mk
+include vendor/heavens/build/target/product/heavens_generic_target.mk
 
-TARGET_NO_KERNEL_OVERRIDE := true
+PRODUCT_NAME := heavens_x86_64
 
-PRODUCT_NAME := lineage_arm64_ab
+PRODUCT_SDK_ADDON_NAME := heavens
+PRODUCT_SDK_ADDON_SYS_IMG_SOURCE_PROP := $(LOCAL_PATH)/source.properties
