@@ -154,7 +154,7 @@ PRODUCT_PACKAGES += \
     mount.ntfs
 
 # Fingerprint
-BUILD_FINGERPRINT := google/redfin/redfin:11/RQ3A.210905.001/7511028:user/release-keys
+BUILD_FINGERPRINT := google/redfin/redfin:11/RQ3A.211001.001/7641976:user/release-keys
 
 # Openssh
 PRODUCT_PACKAGES += \
