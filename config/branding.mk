@@ -1,5 +1,6 @@
 HEAVENS_VARIANT ?= VANILLA
-HEAVENS_BUILD_VERSION := 1.0
+HEAVENS_BUILD_VERSION := 2.0
+HEAVENS_CODENAME := Ruby
 
 # System version
 TARGET_PRODUCT_SHORT := $(subst heavens_,,$(HEAVENS_BUILD_TYPE))
@@ -33,4 +34,5 @@ PRODUCT_GENERIC_PROPERTIES += \
   ro.heavens.build.type=$(HEAVENS_BUILD_TYPE) \
   ro.heavens.build.variant=$(HEAVENS_VARIANT) \
   ro.heavens.build.date=$(HEAVENS_BUILD_DATE) \
-  ro.heavens.build.fingerprint=$(HEAVENS_BUILD_FINGERPRINT)
+  ro.heavens.build.fingerprint=$(HEAVENS_BUILD_FINGERPRINT) \
+  ro.heavens.build.codename=$(HEAVENS_CODENAME)
