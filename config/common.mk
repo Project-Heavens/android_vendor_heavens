@@ -28,6 +28,9 @@ endif
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     persist.sys.disable_rescue=true
 
+# Bootanimation
+include vendor/heavens/config/bootanimation.mk
+
 # Backup Tool
 PRODUCT_COPY_FILES += \
     vendor/heavens/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
