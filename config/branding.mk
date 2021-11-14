@@ -21,7 +21,7 @@ endif
 # Gapps
 ifeq ($(WITH_GAPPS), true)
     HEAVENS_VARIANT := GAPPS
-$(call inherit-product, vendor/gapps/config.mk)
+$(call inherit-product, vendor/gapps/common/common-vendor.mk)
 endif
 
 HEAVENS_BUILD_DATE := $(HEAVENS_DATE_YEAR)$(HEAVENS_DATE_MONTH)$(HEAVENS_DATE_DAY)-$(HEAVENS_DATE_HOUR)$(HEAVENS_DATE_MINUTE)
